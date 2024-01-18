@@ -13,7 +13,7 @@ function showHitokoto() {
     fetch("https://v1.hitokoto.cn")
         .then(response => response.json())
         .then(result => {
-            const text = `这句一言来自 <span>「${result.from}」</span>，是 <span>${result.creator}</span> 在 hitokoto.cn 投稿的。`;
+            const text = `-- <span>${result.creator}</span> <br>           <span> 出自「${result.from}」</span>`;
             showMessage(result.hitokoto, 6000, 9);
             setTimeout(() => {
                 showMessage(text, 4000, 9);
@@ -33,19 +33,26 @@ const tools = {
                 if (!window.ASTEROIDSPLAYERS) window.ASTEROIDSPLAYERS = [];
                 window.ASTEROIDSPLAYERS.push(new Asteroids());
             } else {
+                setTimeout(() => {
+                    showMessage("试着按方向键控制移动，按空格键发射子弹", 10000, 9);
+                }, 6000);
                 const script = document.createElement("script");
-                script.src = "https://fastly.jsdelivr.net/gh/stevenjoezhang/asteroids/asteroids.js";
+                script.src = "https://fastly.jsdelivr.net/gh/Fansirsqi/live2d-widget/src/asteroids.js";
                 document.head.appendChild(script);
             }
         }
     },
     "switch-model": {
         icon: fa_user_circle,
-        callback: () => {}
+        callback: () => {
+            console.log("switch to",localStorage.modelId)
+        }
     },
     "switch-texture": {
         icon: fa_street_view,
-        callback: () => {}
+        callback: () => {
+            console.log("ha")
+        }
     },
     "photo": {
         icon: fa_camera_retro,
@@ -58,7 +65,8 @@ const tools = {
     "info": {
         icon: fa_info_circle,
         callback: () => {
-            open("https://github.com/stevenjoezhang/live2d-widget");
+            // open("https://github.com/stevenjoezhang/live2d-widget");
+            showMessage("项目来自大佬<a href='https://github.com/stevenjoezhang/live2d-widget' >stevenjoezhang</a> ", 6000, 9);
         }
     },
     "quit": {

@@ -23,7 +23,8 @@ function string(opts = {}) {
         renderChunk(code, chunk, outputOptions = {}) {
             return `/*!
  * Live2D Widget
- * https://github.com/stevenjoezhang/live2d-widget
+ * power by https://github.com/stevenjoezhang/live2d-widget
+ * reBuild of Fansirsqi
  */
 ` + code;
         }

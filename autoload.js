@@ -1,6 +1,8 @@
 // live2d_path 参数建议使用绝对路径
-const live2d_path = "https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/";
-//const live2d_path = "/live2d-widget/";
+const live2d_path = "https://fastly.jsdelivr.net/gh/Fansirsqi/live2d-widget@latest/";
+// ==============================
+// for DEBUG
+// const live2d_path = "../";
 
 // 封装异步加载资源的方法
 function loadExternalResource(url, type) {
@@ -11,8 +13,7 @@ function loadExternalResource(url, type) {
 			tag = document.createElement("link");
 			tag.rel = "stylesheet";
 			tag.href = url;
-		}
-		else if (type === "js") {
+		} else if (type === "js") {
 			tag = document.createElement("script");
 			tag.src = url;
 		}

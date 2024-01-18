@@ -353,7 +353,7 @@ function Asteroids() {
         const message = document.createElement("span");
         message.style.position = "absolute";
         message.style.color = "red";
-        message.innerHTML = "Press Esc to Quit";
+        message.innerHTML = "Press Esc to Quit [按ESC退出]";
         document.body.appendChild(message);
         const x = e.pageX || (e.clientX + document.documentElement.scrollLeft);
         const y = e.pageY || (e.clientY + document.documentElement.scrollTop);
